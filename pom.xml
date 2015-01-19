@@ -3,7 +3,7 @@
   <groupId>com.kieferhagin.minecraft</groupId>
   <artifactId>CanaryGravestones</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>JoeGravestones</name>
+  <name>CanaryGravestones</name>
   <description>Gravestone plugin for CanaryMod</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
