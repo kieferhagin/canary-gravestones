@@ -51,7 +51,7 @@ public class Gravestone {
 		};
 		
 		Location signLocation = new Location(stoneStairLocation.getX(),
-				stoneStairLocation.getY()+1, stoneStairLocation.getZ());
+				stoneStairLocation.getY(), stoneStairLocation.getZ() - 2);
 		
 		this.addSign(signLocation, causeOfDeath);
 		
