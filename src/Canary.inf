@@ -1,5 +1,5 @@
 main-class = com.kieferhagin.gravestones.CanaryGravestones
 name = CanaryGravestones
 author = Kiefer Hagin
-version = 0.0.1
+version = 1.0.0
 language = java
