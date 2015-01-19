@@ -69,7 +69,6 @@ public class Gravestone {
 		world.setBlockAt(signLocation, BlockType.SignPost);
 			 
 		Sign sign = (Sign)(world.getBlockAt(signLocation).getTileEntity());
-		sign.getBlock().getLocation().setRotation(8);
 		
 		ChatComponentFactory chatFactory = Canary.factory().getChatComponentFactory();
 		
@@ -89,6 +88,7 @@ public class Gravestone {
 		sign.setComponentOnLine(hereLiesComponent, 0);
 		sign.setComponentOnLine(nameComponent, 1);
 		sign.setComponentOnLine(deathTextLines.get(0), 2);
+		
 		if (deathTextLines.size() > 1){
 			sign.setComponentOnLine(deathTextLines.get(1), 3);
 		}
