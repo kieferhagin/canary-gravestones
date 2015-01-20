@@ -1,6 +1,8 @@
 package com.kieferhagin.gravestones;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import net.canarymod.Canary;
 import net.canarymod.api.chat.ChatComponent;
@@ -72,8 +74,8 @@ public class Gravestone {
 		
 		ChatComponentFactory chatFactory = Canary.factory().getChatComponentFactory();
 		
-		ChatComponent hereLiesComponent = chatFactory.compileChatComponent("~ Here lies ~");
 		ChatComponent nameComponent = chatFactory.compileChatComponent(this.player.getName());
+		ChatComponent timeOfDeathComponent = chatFactory.compileChatComponent(this.getDateNowString());
 		
 		String fullDeathText = causeOfDeath.getFullText().replace(this.player.getName() + " ", "");
 		ArrayList<ChatComponent> deathTextLines = new ArrayList<ChatComponent>();
@@ -85,13 +87,20 @@ public class Gravestone {
 			deathTextLines.add(chatFactory.compileChatComponent(fullDeathText));
 		}
 		
-		sign.setComponentOnLine(hereLiesComponent, 0);
-		sign.setComponentOnLine(nameComponent, 1);
+		sign.setComponentOnLine(nameComponent, 0);
+		sign.setComponentOnLine(timeOfDeathComponent, 1);
 		sign.setComponentOnLine(deathTextLines.get(0), 2);
 		
 		if (deathTextLines.size() > 1){
 			sign.setComponentOnLine(deathTextLines.get(1), 3);
 		}
+	}
+	
+	private String getDateNowString(){
+		Date nowDate = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
+		
+		return dateFormat.format(nowDate);
 	}
 	
 	private void addPlayerItemsToChest(){
